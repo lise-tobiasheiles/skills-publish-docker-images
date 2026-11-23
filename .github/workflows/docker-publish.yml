@@ -18,8 +18,8 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: {{ github.actor }}
-          password: {{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image
         run: |
           docker build . --tag ghcr.io/lise-tobiasheiles/skills-publish-docker-images/stackoverflown:main
